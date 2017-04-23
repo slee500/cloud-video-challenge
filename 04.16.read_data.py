@@ -20,7 +20,10 @@ for example in tf.python_io.tf_record_iterator(filename):
     x = tf.cast(tf.decode_raw(tf_seq_example.feature_lists.feature_list['rgb'].feature[0].
         bytes_list.value[0],tf.uint8),tf.float32).eval()
 
+
+    print x.shape, np.max(x), np.min(x)
     print x
+
 
     # traverse the Example format to get data
     # image = example.features.feature['rgb'].features[0].bytes_list.value[0]
